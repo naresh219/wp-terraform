@@ -5,7 +5,7 @@ resource "random_id" "bucket_id" {
 
 resource "aws_s3_bucket" "wp_bucket" {
     bucket          = "${var.project_name}-${random_id.bucket_id.dec}"
-    acl             = private
+    acl             = "private"
     versioning      = true
     force_destroy   = true
     tags {
